@@ -1,0 +1,14 @@
+﻿@using OpenAvalancheProjectWebApp.Models;
+@model IEnumerable<DateForecastNameViewModel>
+
+@foreach (var m in Model)
+{
+    @Html.RouteLink(m.Date, new
+    {
+        controller = "WestUSv1",
+        action = "Index",
+        date = m.Date,
+        modelId = m.ModelId
+    },
+     new { @class = "dropdown-item" })<br /> 
+}
